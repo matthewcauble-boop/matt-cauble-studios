@@ -42,7 +42,10 @@ turned into a cartoon, or a character their kid loves. The episodes are for **pr
    freezes. For character acting, run the blind critic in [agents/animation-director.md](agents/animation-director.md)
    with a character bible filled in from [docs/character-acting-bible.template.md](docs/character-acting-bible.template.md)
    ([ACTING.md](ACTING.md)). Show the person the result and ask what to change.
-9. **Optional, for a set that recurs across many shots:** build it once in Blender and paint it
+9. **Make the scene alive without more video spend:** generate only the hero action, then add birds, insects,
+   seeds, far animals and side characters in code and grade the set like a storybook
+   ([LIVING-SCENES.md](LIVING-SCENES.md), `tools/living/demo.py` to start). Notes on these layers cost nothing.
+10. **Optional, for a set that recurs across many shots:** build it once in Blender and paint it
    ([BLENDER-WORLD.md](BLENDER-WORLD.md)); it needs Blender installed and is slower to set up, but every shot agrees.
 
 ## Rules of thumb

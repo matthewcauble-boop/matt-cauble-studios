@@ -18,6 +18,7 @@ column links it.
 | 10 | [Composition: rule of thirds](#10-composition-rule-of-thirds) | Horizon on a third, eyes on an intersection, lead room, no dead foreground | `tools/storyboard/thirds.py` |
 | 11 | [Screen direction and the 180-degree line](#11-screen-direction-and-the-180-degree-line) | Keep the journey's direction; mirror a plate, never flip a character | [STORYBOARD.md](STORYBOARD.md#direction-and-continuity) |
 | 12 | [Cuts, camera moves and rhythm](#12-cuts-camera-moves-and-rhythm) | Cut on action, match on action, motivated moves ending on a planned end frame, cuts on beats | [STORYBOARD.md](STORYBOARD.md#cuts) |
+| 14 | [Generate the shot, code the life](#14-generate-the-shot-code-the-life) | The video model does the hero action; birds, insects, seeds, far animals, side characters and the grade are code, so notes cost $0 | `tools/living/`, [LIVING-SCENES.md](LIVING-SCENES.md) |
 | 13 | [Score explainer scripts before recording voices](#13-score-explainer-scripts-before-recording-voices) | Measure a channel you admire into a bible; score and blind-critique every script before VO and every rough cut; learn structure, never copy words | `tools/explainer-critic/`, [EXPLAINER-CRITIC.md](EXPLAINER-CRITIC.md) |
 
 ---
@@ -269,3 +270,20 @@ target and a poor first pass.
 
 **Tool:** `tools/explainer-critic/` (`build_bible.py`, `score.py`, an example bible and sample scripts) and the agent
 `agents/explainer-critic.md`. Guide: [EXPLAINER-CRITIC.md](EXPLAINER-CRITIC.md).
+
+## 14. Generate the shot, code the life
+
+- **Split by size.** A video model is good at one big physical action with a real camera; it is bad at small,
+  exactly-timed things. Generate the hero action; draw the birds, butterflies, frogs, bees, seeds and side characters
+  in code on top, timed to the hero's beats. Every later note becomes a free re-render.
+- **Short hero prompts.** One sentence chain of the action and its end state; no holds (add them in the edit); refs
+  carry the look. Intent-only prompts let the model rewrite the task.
+- **Start in a state = image-to-video from a still.** First + last frame need the same camera and the character
+  where he naturally ends up, or the model cuts or dissolves; build the end frame from the take's own frame.
+- **Background animals in the plate's style;** moving ones need pose drawings; realistic far animals are painted into
+  a frame and tracked to the plate; everything sits on a visible surface and reacts to the story.
+- **Grade before the side characters:** a storybook grade on the set, the hero masked, side characters composited
+  after it so they keep full colour.
+
+**Tool:** `tools/living/`. Guide: [LIVING-SCENES.md](LIVING-SCENES.md).
+

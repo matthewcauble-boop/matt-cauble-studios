@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 330" font-family="Helvetica, Arial, sans-serif" font-size="14">
+  <rect width="760" height="330" fill="#fbf7ee"/>
+  <text x="24" y="34" font-size="18" font-weight="bold" fill="#2a2a2a">Generate the shot, code the life</text>
+  <g>
+    <rect x="24" y="56" width="150" height="250" rx="10" fill="#e8eef7" stroke="#6b84a8"/>
+    <text x="99" y="84" text-anchor="middle" font-weight="bold" fill="#2a3a55">1. Video model</text>
+    <text x="99" y="110" text-anchor="middle" fill="#2a3a55">hero action</text>
+    <text x="99" y="130" text-anchor="middle" fill="#2a3a55">set + camera</text>
+    <text x="99" y="150" text-anchor="middle" fill="#2a3a55">one short prompt</text>
+    <text x="99" y="170" text-anchor="middle" fill="#2a3a55">i2v from a still</text>
+    <text x="99" y="286" text-anchor="middle" font-weight="bold" fill="#a03a2a">paid</text>
+  </g>
+  <g>
+    <rect x="200" y="56" width="150" height="250" rx="10" fill="#eef5e6" stroke="#7a9a5a"/>
+    <text x="275" y="84" text-anchor="middle" font-weight="bold" fill="#33502a">2. Background life</text>
+    <text x="275" y="110" text-anchor="middle" fill="#33502a">birds, butterfly, frog</text>
+    <text x="275" y="130" text-anchor="middle" fill="#33502a">bees, seeds, motes</text>
+    <text x="275" y="150" text-anchor="middle" fill="#33502a">painted-in deer,</text>
+    <text x="275" y="170" text-anchor="middle" fill="#33502a">tracked to the plate</text>
+    <text x="275" y="286" text-anchor="middle" font-weight="bold" fill="#2a7a3a">code, $0</text>
+  </g>
+  <g>
+    <rect x="376" y="56" width="150" height="250" rx="10" fill="#f6efe0" stroke="#b09060"/>
+    <text x="451" y="84" text-anchor="middle" font-weight="bold" fill="#5a4320">3. Storybook grade</text>
+    <text x="451" y="110" text-anchor="middle" fill="#5a4320">set muted, soft,</text>
+    <text x="451" y="130" text-anchor="middle" fill="#5a4320">warm paper</text>
+    <text x="451" y="150" text-anchor="middle" fill="#5a4320">hero masked:</text>
+    <text x="451" y="170" text-anchor="middle" fill="#5a4320">full colour</text>
+    <text x="451" y="286" text-anchor="middle" font-weight="bold" fill="#2a7a3a">code, $0</text>
+  </g>
+  <g>
+    <rect x="552" y="56" width="184" height="250" rx="10" fill="#fbe8e4" stroke="#c0705a"/>
+    <text x="644" y="84" text-anchor="middle" font-weight="bold" fill="#6a2a1a">4. Side characters</text>
+    <text x="644" y="110" text-anchor="middle" fill="#6a2a1a">code-animated on top,</text>
+    <text x="644" y="130" text-anchor="middle" fill="#6a2a1a">black/white matte</text>
+    <text x="644" y="150" text-anchor="middle" fill="#6a2a1a">timed to the hero's beats</text>
+    <text x="644" y="170" text-anchor="middle" fill="#6a2a1a">expressions in code</text>
+    <text x="644" y="286" text-anchor="middle" font-weight="bold" fill="#2a7a3a">code, $0</text>
+  </g>
+  <g fill="#888">
+    <polygon points="178,180 196,170 196,190"/><polygon points="354,180 372,170 372,190"/><polygon points="530,180 548,170 548,190"/>
+  </g>
+</svg>

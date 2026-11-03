@@ -11,6 +11,8 @@ tools/
   storyboard/sheet.py         annotated storyboard sheet (arrows, end frames, timing, IN/CAM/action); --thirds overlay sheet
   storyboard/thirds.py        rule-of-thirds check (fal / OpenAI-compatible / manual) + grid overlays
   storyboard/example/         storyboard.json, placeholder frames (make_frames.py) and the rendered sheets
+  living/life.py              living-scene layer kit (critters, insects, seeds, plate tracking, storybook grade, b/w mattes)
+  living/demo.py              add bees, seeds, a flock and the storybook grade to any clip
   timing/onestwos.py          ones / twos / threes re-timing in the edit
   timing/examples/timing.example.json
   bakeoff/bake.py             resumable fal bake-off runner + ledger
