@@ -32,13 +32,14 @@ def on_twos(t, fps=24):
     return math.floor(t * fps / 2) * 2 / fps
 
 # ---------------------------------------------------------------- sprites from a painted sheet
-def cut_sheet(path, names, min_px=3000, thr=28, order="rows"):
+def cut_sheet(path, names, min_px=3000, thr=28, order="rows", grow=9):
     """Cut the drawings out of a sheet painted on a flat background (corner colour). Returns {name: RGBA float}.
-    order="rows": top-to-bottom bands, then left-to-right; "cols": left-to-right only. len(names) must match."""
+    order="rows": top-to-bottom bands, then left-to-right; "cols": left-to-right only. len(names) must match.
+    grow joins a drawing's loose bits (legs, tails); lower it when drawings sit close together (a run cycle)."""
     im = cv2.imread(str(path))[:, :, ::-1].astype(np.float32)
     bg = np.median(im[:30, :30].reshape(-1, 3), 0); d = np.abs(im - bg).max(2)
     fg = (d > thr).astype(np.uint8)
-    n, lab, stats, _ = cv2.connectedComponentsWithStats(cv2.dilate(fg, np.ones((3, 3), np.uint8), iterations=9))
+    n, lab, stats, _ = cv2.connectedComponentsWithStats(cv2.dilate(fg, np.ones((3, 3), np.uint8), iterations=grow))
     boxes = [(stats[i, 1], stats[i, 0], stats[i, 3], stats[i, 2]) for i in range(1, n) if (fg[lab == i]).sum() > min_px]
     if order == "rows":
         boxes.sort(key=lambda b: b[0]); bands = []
