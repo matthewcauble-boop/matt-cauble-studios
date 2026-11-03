@@ -268,6 +268,22 @@ def storybook_grade(f, mask=None, keep=0.6, contrast=0.86, lift=0.025, paper=(1.
     ch = lum + (f - lum) * char_sat; a = mask[..., None]
     return np.clip(bg * (1 - a) + ch * a, 0, 1)
 
+def meadow_grade(f, mask=None, green_shift=4.0, sat=1.12, value=0.97, warm=(1.01, 1.0, 0.98)):
+    """The alternative to storybook_grade when the set should stay lush: nudge yellow-greens toward green (hue in OpenCV
+    degrees/2, weighted to the 15-45 band so skies, skin tones and reds don't move), lift saturation a little, keep the light.
+    The character(s) under `mask` stay exactly as generated."""
+    u8 = (np.clip(f, 0, 1) * 255).astype(np.uint8)
+    hsv = cv2.cvtColor(u8[..., ::-1], cv2.COLOR_BGR2HSV).astype(np.float32)
+    h, s = hsv[..., 0], hsv[..., 1]
+    w = np.clip(1 - np.abs(h - 30) / 15, 0, 1)                       # 1 at yellow-green, 0 outside 15..45
+    hsv[..., 0] = h + green_shift * w
+    hsv[..., 1] = np.clip(s * (1 + (sat - 1) * (0.4 + 0.6 * w)), 0, 255)
+    hsv[..., 2] = hsv[..., 2] * value
+    bg = cv2.cvtColor(hsv.astype(np.uint8), cv2.COLOR_HSV2BGR)[..., ::-1].astype(np.float32) / 255 * np.array(warm, np.float32)
+    if mask is None: return np.clip(bg, 0, 1)
+    a = mask[..., None]
+    return np.clip(bg * (1 - a) + f * a, 0, 1)
+
 def mask_from_video(frame_u8_or_float, grow=2, blur=1.2):
     """A mask frame (white = character, e.g. from SAM 2 video) -> soft float mask, grown a little to cover the edge."""
     m = frame_u8_or_float[..., 0] if frame_u8_or_float.ndim == 3 else frame_u8_or_float
